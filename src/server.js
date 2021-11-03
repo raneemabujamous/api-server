@@ -11,7 +11,6 @@ app.use(express.json());
 
 app.use(foodrouter);
 app.use(clothesrouter);
-// app.use(logger);
 
 app.use("*", handle404);
 app.use(handle500error);
@@ -24,3 +23,4 @@ module.exports = {
   server: app,
   start: start,
 };
+///

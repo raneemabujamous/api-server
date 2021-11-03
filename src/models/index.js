@@ -42,8 +42,7 @@
 "use strict";
 
 const DATABASE_URL =
-  process.env.DATABASE_URL ||
-  "postgresql://razanatallah:12345@localhost:5432/class4db";
+  process.env.NODE_ENV === "test" ? "sqlite:memory:" : process.env.DATABASE_URL;
 
 const { Sequelize, DataTypes } = require("sequelize");
 
