@@ -5,7 +5,7 @@ clothesrouter.get("/clothes", getItem);
 clothesrouter.get("/clothes/:id", getOneItem);
 clothesrouter.put("/clothes/:id", getIonetem);
 clothesrouter.post("/clothes", addItem);
-clothesrouter.put("/clothes/:id", updataItemm);
+// clothesrouter.put("/clothes/:id", updataItemm);
 clothesrouter.delete("/clothes/:id", deleteItem);
 
 async function getItem(req, res) {
@@ -28,12 +28,12 @@ async function getOneItem(req, res) {
   const item = await clothescolection.getItem(id);
   res.status(200).json(item);
 }
-async function updataItemm(req, res) {
-  const id = parseInt(req.params.id);
-  const obj = req.body;
-  let updatedItem = await clothescolection.updateItem(id, obj);
-  res.status(201).json(updatedItem);
-}
+// async function updataItemm(req, res) {
+//   const id = parseInt(req.params.id);
+//   const obj = req.body;
+//   let updatedItem = await clothescolection.updateItem(id, obj);
+//   res.status(201).json(updatedItem);
+// }
 
 async function deleteItem(req, res) {
   const id = parseInt(req.params.id);
