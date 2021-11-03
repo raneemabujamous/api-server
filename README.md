@@ -27,10 +27,10 @@ main branch https://lab03401.herokuapp.com/
 
 Github actions
 actions
-https://github.com/raneemabujamous/basic-api-server/actions
+https://github.com/raneemabujamous/api-server/actions
 
 pull request
-last pull request https://github.com/raneemabujamous/basic-api-server/pulls
+last pull request https://github.com/raneemabujamous/api-server/tree/dev
 
 CI, CD: Continuos Intergration and Continuous Deployment
 deppendicies vs devDependiceis
@@ -42,3 +42,4 @@ deppendicies vs devDependiceis
 Postregs for strucured query language as tables .
 
 sumrization
+![piv](lab444.png)
