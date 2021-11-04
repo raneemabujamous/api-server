@@ -8,7 +8,9 @@ const PORT = process.env.PORT;
 const foodrouter = require("./routes/food");
 const clothesrouter = require("./routes/clothes");
 app.use(express.json());
-
+app.get("/", (req, res) => {
+  res.send("hello");
+});
 app.use(foodrouter);
 app.use(clothesrouter);
 
