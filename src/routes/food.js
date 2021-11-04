@@ -3,9 +3,9 @@ const foodrouter = express.Router();
 const { foodcollection } = require("../models/index");
 foodrouter.get("/food", getItem);
 foodrouter.get("/food/:id", getOneItem);
-foodrouter.put("/food/:id", getIonetem);
+// foodrouter.put("/food/:id", getIonetem);
 foodrouter.post("/food", addItem);
-// foodrouter.put("/food/:id", updataItemm);
+foodrouter.put("/food/:id", updataItemm);
 foodrouter.delete("/food/:id", deleteItem);
 
 async function getItem(req, res) {
@@ -28,12 +28,13 @@ async function getOneItem(req, res) {
   const item = await foodcollection.getItem(id);
   res.status(200).json(item);
 }
-// async function updataItemm(req, res) {
-//   const id = parseInt(req.params.id);
-//   const obj = req.body;
-//   let updatedItem = await foodcollection.updateItem(id, obj);
-//   res.status(201).json(updatedItem);
-// }
+async function updataItemm(req, res) {
+  const id = parseInt(req.params.id);
+  const obj = req.body;
+  let updatedItem = await foodcollection.updateItem(id, obj);
+  const item = await foodcollection.getItem(id);
+  res.status(201).json(item);
+}
 
 async function deleteItem(req, res) {
   const id = parseInt(req.params.id);
